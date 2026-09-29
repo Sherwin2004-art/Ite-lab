@@ -98,35 +98,4 @@ document.addEventListener("DOMContentLoaded", () => {
         
     ];
 
-    let currentIndex = 0;
-
-    changeImageBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        myImage.src = images[currentIndex];
-    });
-
     
-    const addTodoBtn = document.getElementById("addTodoBtn");
-    const clearTodoBtn = document.getElementById("clearTodoBtn");
-    const todoInput = document.getElementById("todoInput");
-    const todoList = document.getElementById("todoList");
-
-    addTodoBtn.addEventListener("click", () => {
-        if (todoInput.value.trim() !== "") {
-            const li = document.createElement("li");
-            li.textContent = todoInput.value + " ";
-
-            const deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Delete";
-            deleteBtn.addEventListener("click", () => li.remove());
-
-            li.appendChild(deleteBtn);
-            todoList.appendChild(li);
-            todoInput.value = "";
-        }
-    });
-
-    clearTodoBtn.addEventListener("click", () => {
-        todoList.innerHTML = "";
-    });
-});
